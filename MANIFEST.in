@@ -1,0 +1,7 @@
+include *.md
+include .coveragerc
+include AUTHORS
+include LICENSE
+include tox.ini
+exclude Dockerfile
+recursive-include bin *.c
