@@ -1,6 +1,8 @@
 Comment Filter
 ==============
 
+[![CircleCI](https://circleci.com/gh/codeauroraforum/comment-filter.svg?style=svg)](https://circleci.com/gh/codeauroraforum/comment-filter)
+
 A Python library and command-line utility that filters comments from a source
 code file, replacing each non-comment character with a space.
 
@@ -49,7 +51,7 @@ To get comments without the comment tokens:
 ```bash
 $ comments --notokens hello.c
    multi-line
-   comment   
+   comment
    single-line comment
 ```
 
@@ -57,9 +59,9 @@ Filter out the comments:
 
 ```bash
 $ comments --onlycode hello.c
-             
-             
-                      
+
+
+
 
 int main() {
   return 0;
