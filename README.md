@@ -156,3 +156,9 @@ To remove all files not registered with git.
 ```bash
 $ git clean -Xdf
 ```
+
+
+License
+-------
+
+Comment Filter is licensed under the BSD 3-clause “New” or “Revised” License. See [LICENSE](LICENSE) for the full license text.
