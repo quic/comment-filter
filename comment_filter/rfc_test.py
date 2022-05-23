@@ -246,9 +246,21 @@ def c_comments(s, keep_tokens=True):
     return list(rfc.parse_file(language.c, StringIO(s), keep_tokens=keep_tokens))
 
 
+def sql_comments(s, keep_tokens=True):
+    return list(rfc.parse_file(language.sql, StringIO(s), keep_tokens=keep_tokens))
+
+
+def assembly_comments(s, keep_tokens=True):
+    return list(rfc.parse_file(language.assembly, StringIO(s), keep_tokens=keep_tokens))
+
+
 def test_parse_file():
     assert c_comments('/* hello */ world\n') == ['/* hello */      \n']
     assert c_comments('/* hello */ world\n', False) == ['   hello         \n']
+    assert sql_comments('-- sql 1\nsql 2\n') == ['-- sql 1\n', '     \n']
+    assert sql_comments('/* sql 1\nsql 2\n*/foo\n') == ['/* sql 1\n', 'sql 2\n',  '*/   \n']
+    assert assembly_comments('; comment\ncode\n') == ['; comment\n', '    \n']
+    assert assembly_comments('/* line1\nline2\n*/line3\n') == ['/* line1\n', 'line2\n', '*/     \n']
 
 
 def test_parse_comments_via_reduce():

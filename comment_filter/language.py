@@ -14,6 +14,16 @@ c = Lang(
     comment_bookends=[('/*', '*/'), (';;', ';;')],
     nested_comments=False)
 
+assembly = Lang(
+    line_comment=';',
+    comment_bookends=[('/*', '*/')],
+    nested_comments=False)
+
+sql = Lang(
+    line_comment='--',
+    comment_bookends=[('/*', '*/')],
+    nested_comments=False)
+
 haskell = Lang(
     line_comment='--',
     comment_bookends=[('{-', '-}')],
