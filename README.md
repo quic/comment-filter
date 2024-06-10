@@ -126,6 +126,7 @@ The syntax for the following tokens are provided by the `language` module:
 Recognized Languages
 --------------------
 
+  * Assembly
   * C
   * C++
   * Go
@@ -135,6 +136,7 @@ Recognized Languages
   * Python
   * Perl
   * Ruby
+  * SQL
 
 
 Developing
